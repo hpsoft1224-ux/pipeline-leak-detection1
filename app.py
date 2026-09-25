@@ -1,14 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import pickle
+import joblib
 import json
 import numpy as np
 
 app = Flask(__name__)
 CORS(app)
 
-with open("final_hardware_pipeline_random_forest.pkl", "rb") as f:
-    model = pickle.load(f)
+model = joblib.load("final_hardware_pipeline_random_forest.pkl")
 
 with open("final_deployment_config.json", "r") as f:
     config = json.load(f)
