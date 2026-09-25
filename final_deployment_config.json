@@ -1,0 +1,19 @@
+{
+    "model": "RandomForestClassifier",
+    "n_estimators": 300,
+    "random_state": 42,
+    "class_weight": "balanced",
+    "features": [
+        "Inlet_LPM",
+        "Outlet_LPM",
+        "Flow_Deficit_LPM"
+    ],
+    "threshold_lpm": 2.1,
+    "decision_mode": "OR",
+    "real_samples": 6625,
+    "synthetic_samples": 2000,
+    "total_training_samples": 8625,
+    "real_no_leak_samples": 2122,
+    "real_leak_samples": 4503,
+    "synthetic_no_leak_samples": 2000
+}
