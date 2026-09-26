@@ -44,12 +44,8 @@ def predict():
 
     threshold_alarm = int(deficit >= THRESHOLD)
 
-    if threshold_alarm == 1:
-        final_prediction = 1
-        status = "LEAK"
-    else:
-        final_prediction = 0
-        status = "NO LEAK"
+    final_prediction=int(rf_prediction == 1 or threshold-alarm ==1)
+    status = "LEAK" if final_prediction else "NO LEAK"
 
     return jsonify({
         "inlet_lpm": inlet,
